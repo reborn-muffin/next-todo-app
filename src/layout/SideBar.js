@@ -13,46 +13,48 @@ import {
 } from "@mui/icons-material"
 import {useLayoutStyles} from "./layoutStyles"
 
-export const SideBar = () => {
+export const SideBar = ({drawerWidth}) => {
     const styles = useLayoutStyles()
 
-    return <Drawer variant={"permanent"} ModalProps={{keepMounted: true }} open={true} anchor={"left"}
+    return <Drawer variant={"permanent"} ModalProps={{keepMounted: true}} open={true} anchor={"left"}
+                   PaperProps={{ sx: { width: drawerWidth } }}
     >
         <List className={styles.menuList}>
-            <Toolbar />
+            <Toolbar/>
+            <Divider />
             <ListItem>
                 <ListItemButton>
                     <ListItemIcon>
-                        <CalendarTodayOutlined />
+                        <CalendarTodayOutlined/>
                     </ListItemIcon>
-                    <ListItemText primary={"Today"} />
+                    <ListItemText primary={"Today"}/>
                 </ListItemButton>
             </ListItem>
             <ListItem>
                 <ListItemButton>
                     <ListItemIcon>
-                        <CalendarMonthOutlined />
+                        <CalendarMonthOutlined/>
                     </ListItemIcon>
-                    <ListItemText primary={"Upcoming"} />
+                    <ListItemText primary={"Upcoming"}/>
                 </ListItemButton>
             </ListItem>
             <ListItem>
                 <ListItemButton>
                     <ListItemIcon>
-                        <DoneOutlineOutlined />
+                        <DoneOutlineOutlined/>
                     </ListItemIcon>
-                    <ListItemText primary={"Completed"} />
+                    <ListItemText primary={"Completed"}/>
                 </ListItemButton>
             </ListItem>
             <ListItem>
                 <ListItemButton>
                     <ListItemIcon>
-                        <AssignmentLateOutlined />
+                        <AssignmentLateOutlined/>
                     </ListItemIcon>
                     <ListItemText primary={"Overdue"}/>
                 </ListItemButton>
             </ListItem>
-        </List >
-        <Divider />
+        </List>
+        <Divider/>
     </Drawer>
 }
