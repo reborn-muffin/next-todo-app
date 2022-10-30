@@ -10,9 +10,7 @@ function App() {
         <Provider store={store}>
             <ThemeProvider theme={appTheme}>
                 <div className="App">
-                    <header className="App-header">
-                        <Layout children={<TaskList />}/>
-                    </header>
+                    <Layout children={<TaskList />}/>
                 </div>
             </ThemeProvider>
         </Provider>
