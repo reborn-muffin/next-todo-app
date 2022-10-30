@@ -1,12 +1,16 @@
 import {useLayoutStyles} from "./layoutStyles"
-import {Box, Button, Typography} from "@mui/material"
+import {AppBar, Box, Button, Toolbar, Typography} from "@mui/material"
 
 export const Header = () => {
     const styles = useLayoutStyles();
-    return <Box className={styles.header} display={"flex"} justifyContent={"space-between"} padding={2} marginTop={2}>
-        <Typography variant={"h5"}>
-            Todo App
-        </Typography>
-        <Button variant={"outlined"} color={"inherit"}>Logout</Button>
+    return <Box className={styles.header} sx={{ flexGrow: 1 }}>
+        <AppBar position={"static"} >
+            <Toolbar>
+                <Typography variant={"h5"} sx={{ flexGrow: 1 }}>
+                    Todo App
+                </Typography>
+                <Button variant={"outlined"} color={"inherit"}>Logout</Button>
+            </Toolbar>
+        </AppBar>
     </Box>
 }
