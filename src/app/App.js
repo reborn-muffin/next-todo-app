@@ -1,6 +1,6 @@
-import {Provider} from "react-redux";
-import {store} from "../redux-store/store";
-import {Layout} from "../layout/Layout";
+import {Provider} from "react-redux"
+import {store} from "../redux-store/store"
+import {Layout} from "../layout/Layout"
 import {ThemeProvider} from "@mui/material"
 import appTheme from "./appTheme"
 
@@ -15,7 +15,7 @@ function App() {
             </div>
         </ThemeProvider>
       </Provider>
-  );
+  )
 }
 
-export default App;
+export default App
