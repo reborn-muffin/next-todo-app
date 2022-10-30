@@ -1,21 +1,22 @@
 import {Provider} from "react-redux"
 import {store} from "../redux-store/store"
 import {Layout} from "../layout/Layout"
-import {ThemeProvider} from "@mui/material"
+import {TaskList} from "../taskList/TaskList"
+import {ThemeProvider} from "@mui/styles"
 import appTheme from "./appTheme"
 
 function App() {
-  return (
-      <Provider store={store}>
-        <ThemeProvider theme={appTheme}>
-            <div className="App">
-                <header className="App-header">
-                    <Layout />
-                </header>
-            </div>
-        </ThemeProvider>
-      </Provider>
-  )
+    return (
+        <Provider store={store}>
+            <ThemeProvider theme={appTheme}>
+                <div className="App">
+                    <header className="App-header">
+                        <Layout children={<TaskList />}/>
+                    </header>
+                </div>
+            </ThemeProvider>
+        </Provider>
+    )
 }
 
 export default App
