@@ -11,15 +11,12 @@ import {
     DoneOutlineOutlined,
     AssignmentLateOutlined,
 } from "@mui/icons-material"
-import {useLayoutStyles} from "./layoutStyles"
 
 export const SideBar = ({drawerWidth}) => {
-    const styles = useLayoutStyles()
-
     return <Drawer variant={"permanent"} ModalProps={{keepMounted: true}} open={true} anchor={"left"}
                    PaperProps={{ sx: { width: drawerWidth } }}
     >
-        <List className={styles.menuList}>
+        <List>
             <Toolbar/>
             <Divider />
             <ListItem>
