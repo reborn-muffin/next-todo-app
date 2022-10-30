@@ -1,9 +1,9 @@
 import {useLayoutStyles} from "./layoutStyles"
 import {AppBar, Button, Toolbar, Typography} from "@mui/material"
 
-export const Header = () => {
+export const Header = ({headerHeight}) => {
     const styles = useLayoutStyles()
-    return <AppBar className={styles.header}>
+    return <AppBar className={styles.header} sx={{ height: headerHeight}}>
         <Toolbar>
             <Typography variant={"h5"} sx={{flexGrow: 1}}>
                 Todo App
