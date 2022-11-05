@@ -15,7 +15,7 @@ export const TaskList = () => {
 
     const taskCard = (task) => (<Grid item flexGrow={1} style={customStyles.taskGrid}>
         <Card key={task.id} style={{height: 250}}>
-            <CardContent>
+            <CardContent style={customStyles.cardContent}>
                 <Stack direction={"row"} alignItems={"center"}>
                     <Typography variant={"h6"} textOverflow={"ellipsis"} overflow={"hidden"}>{task.title}</Typography>
                     <IconButton component={"label"} onClick={() => dispatch(deleteTodo(task.id))} style={{marginLeft: "auto"}}>

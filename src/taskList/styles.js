@@ -12,6 +12,10 @@ const styles = {
         width: "80%",
         margin: "5% auto",
     },
+    cardContent: {
+        height: 250,
+        boxSizing: "border-box"
+    }
 }
 
 export default styles;
