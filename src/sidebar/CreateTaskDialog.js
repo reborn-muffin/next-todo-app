@@ -12,6 +12,8 @@ import {useState} from "react"
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs"
 import {createTodo} from "../taskList/TaskAPI"
 import {useDispatch} from "react-redux"
+import customStyles from "./styles"
+
 const CreateTaskDialog = ({isOpen, handleClose}) => {
     const dispatch = useDispatch()
 
@@ -40,7 +42,7 @@ const CreateTaskDialog = ({isOpen, handleClose}) => {
             {"Create task"}
         </DialogTitle>
         <DialogContent id={"create-task-dialog-content"}>
-            <Stack spacing={3} marginTop={"1em"}  width={"30em"}>
+            <Stack spacing={3} style={customStyles.createDialog}>
                 <Stack spacing={2}>
                     <TextField autoFocus id={"title"} label={"title"} value={title} inputProps={{maxLength: 30}}
                                onChange={(event) => setTitle(event.target.value)}/>
