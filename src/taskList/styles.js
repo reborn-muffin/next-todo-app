@@ -14,6 +14,11 @@ const styles = {
     },
     cardContent: {
         boxSizing: "border-box",
+    },
+    dateString: {
+        display: "block",
+        textAlign: "right",
+        marginTop: "1em"
     }
 }
 

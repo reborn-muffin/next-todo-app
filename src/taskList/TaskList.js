@@ -26,7 +26,7 @@ export const TaskList = () => {
                     </Stack>
                     <Typography variant={"body1"} style={customStyles.taskBody}>{task.description}</Typography>
                 </Box>
-                <Typography variant={"body2"} textAlign={"right"}>{formatDate(task.overdueDate)}</Typography>
+                <Typography variant={"caption"} style={customStyles.dateString}>{formatDate(task.overdueDate)}</Typography>
             </CardContent>
         </Card>
     </Grid>)
