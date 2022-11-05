@@ -1,6 +1,6 @@
 import {Box} from "@mui/material"
-import {Header} from "./Header"
-import {Sidebar} from "./sidebar/Sidebar"
+import {Header} from "../header/Header"
+import {Sidebar} from "../sidebar/Sidebar"
 
 export const Layout = ({children}) => {
     const drawerWidth = "15em"

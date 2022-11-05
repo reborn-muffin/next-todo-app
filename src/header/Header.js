@@ -1,4 +1,4 @@
-import {useLayoutStyles} from "./layoutStyles"
+import {useLayoutStyles} from "./headerStyles"
 import {AppBar, Button, Toolbar, Typography} from "@mui/material"
 
 export const Header = ({headerHeight}) => {
