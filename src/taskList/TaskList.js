@@ -16,8 +16,9 @@ export const TaskList = () => {
     const taskCard = (task) => (<Grid item flexGrow={1} style={customStyles.taskGrid}>
         <Card key={task.id} style={{height: 250}}>
             <CardContent>
-                <Typography variant={"h4"}>{task.title}</Typography>
+                <Typography variant={"h6"} textOverflow={"ellipsis"} overflow={"hidden"}>{task.title}</Typography>
                 <Typography variant={"body1"} style={customStyles.taskBody}>{task.description}</Typography>
+                <Typography variant={"body2"}>{task.overdueDate}</Typography>
             </CardContent>
         </Card>
     </Grid>)

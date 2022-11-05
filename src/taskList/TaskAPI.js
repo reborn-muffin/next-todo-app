@@ -8,3 +8,11 @@ export const loadTasks = () => {
         })
     }
 }
+
+export const createTodo = (title, description, overdueDate) => {
+    return (dispatch) => {
+        axios.post("http://localhost:3000/tasks", {title, description, overdueDate}).then(() => {
+            dispatch(loadTasks())
+        })
+    }
+}

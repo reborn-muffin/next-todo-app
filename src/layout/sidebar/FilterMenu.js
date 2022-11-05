@@ -45,4 +45,4 @@ const FilterMenu = () => {
     </List>
 }
 
-export default FilterMenu;
+export default FilterMenu
