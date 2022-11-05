@@ -7,7 +7,7 @@ import {
     Stack,
     TextField,
 } from "@mui/material"
-import {DesktopDatePicker, LocalizationProvider} from "@mui/x-date-pickers"
+import {DateTimePicker, LocalizationProvider} from "@mui/x-date-pickers"
 import {useState} from "react"
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs"
 import {createTodo} from "../taskList/taskAPI"
@@ -37,6 +37,11 @@ const CreateTaskDialog = ({isOpen, handleClose}) => {
         closeDialog()
     }
 
+    const applyOverdueDate = (date) => {
+        const formattedDate = new Date(date).getTime()
+        setOverdueDate(formattedDate)
+    }
+
     return <Dialog open={isOpen} onClose={closeDialog} maxWidth={"sm"}>
         <DialogTitle id={"create-task-dialog-title"}>
             {"Create task"}
@@ -51,8 +56,8 @@ const CreateTaskDialog = ({isOpen, handleClose}) => {
                                inputProps={{maxLength: 220}}/>
                 </Stack>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DesktopDatePicker label={"Overdue date"} value={overdueDate} onChange={setOverdueDate}
-                                       renderInput={(params) => <TextField {...params}/>}/>
+                    <DateTimePicker label={"Overdue date"}  value={overdueDate} onChange={applyOverdueDate}
+                                       renderInput={(params) => <TextField {...params}/>} />
                 </LocalizationProvider>
             </Stack>
         </DialogContent>

@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux"
 import {Box, Card, CardContent, Grid, IconButton, Stack, Typography} from "@mui/material"
 import customStyles from "./styles"
 import {DeleteOutline} from "@mui/icons-material"
+import {formatDate} from "../common/DateTimeUtility"
 
 export const TaskList = () => {
     const dispatch = useDispatch()
@@ -25,7 +26,7 @@ export const TaskList = () => {
                     </Stack>
                     <Typography variant={"body1"} style={customStyles.taskBody}>{task.description}</Typography>
                 </Box>
-                <Typography variant={"body2"} textAlign={"right"}>{task.overdueDate}</Typography>
+                <Typography variant={"body2"} textAlign={"right"}>{formatDate(task.overdueDate)}</Typography>
             </CardContent>
         </Card>
     </Grid>)
