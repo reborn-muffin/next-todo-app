@@ -16,3 +16,11 @@ export const createTodo = (title, description, overdueDate) => {
         })
     }
 }
+
+export const deleteTodo = (id) => {
+    return (dispatch) => {
+        axios.delete(`http://localhost:3000/tasks/${id}`).then(() => {
+            dispatch(loadTasks())
+        })
+    }
+}
