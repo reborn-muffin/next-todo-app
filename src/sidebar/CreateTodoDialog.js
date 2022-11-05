@@ -14,7 +14,7 @@ import {createTodo} from "../taskList/taskAPI"
 import {useDispatch} from "react-redux"
 import customStyles from "./styles"
 
-const CreateTaskDialog = ({isOpen, handleClose}) => {
+const CreateTodoDialog = ({isOpen, handleClose}) => {
     const dispatch = useDispatch()
 
     const [title, setTitle] = useState("")
@@ -68,4 +68,4 @@ const CreateTaskDialog = ({isOpen, handleClose}) => {
     </Dialog>
 }
 
-export default CreateTaskDialog
+export default CreateTodoDialog

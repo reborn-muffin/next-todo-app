@@ -1,7 +1,7 @@
 import {List, ListItem, ListItemButton, ListItemIcon, ListItemText} from "@mui/material"
 import {CreateOutlined} from "@mui/icons-material"
 import {useState} from "react"
-import CreateTaskDialog from "./CreateTaskDialog"
+import CreateTodoDialog from "./CreateTodoDialog"
 
 const ControlMenu = () => {
     const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false)
@@ -17,7 +17,7 @@ const ControlMenu = () => {
                 </ListItemButton>
             </ListItem>
         </List>
-        <CreateTaskDialog isOpen={isCreateDialogOpen} handleClose={() => setIsCreateDialogOpen(false)}/>
+        <CreateTodoDialog isOpen={isCreateDialogOpen} handleClose={() => setIsCreateDialogOpen(false)}/>
     </>
 }
 
