@@ -6,7 +6,7 @@ const styles = {
     },
     taskGrid: {
         width: "100%",
-        maxWidth: "30%",
+        maxWidth: "33%",
     },
     rootGrid: {
         width: "80%",
@@ -14,6 +14,10 @@ const styles = {
     },
     cardContent: {
         boxSizing: "border-box",
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+        justifyContent: "space-between"
     },
     dateString: {
         display: "block",
@@ -23,7 +27,6 @@ const styles = {
     mainContent: {
         overflow: "hidden",
         boxSizing: "border-box",
-        height: "12em"
     },
     todoTitle: {
         overflow: "hidden",
