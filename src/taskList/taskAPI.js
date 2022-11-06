@@ -24,3 +24,11 @@ export const deleteTodo = (id) => {
         })
     }
 }
+
+export const editTodo = (todo) => {
+    return (dispatch) => {
+        axios.patch(`http://localhost:3000/tasks/${todo.id}`, todo).then(() => {
+            dispatch(loadTasks())
+        })
+    }
+}

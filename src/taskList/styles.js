@@ -19,7 +19,12 @@ const styles = {
         display: "block",
         textAlign: "right",
         marginTop: "1em"
+    },
+    mainContent: {
+        overflow: "hidden",
+        boxSizing: "border-box",
+        height: "12em"
     }
 }
 
-export default styles;
+export default styles
