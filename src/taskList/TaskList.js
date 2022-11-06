@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react"
-import {deleteTodo, loadTasks} from "./taskAPI"
+import {deleteTodo, loadTasks, changeTodoStatus} from "./taskAPI"
 import {useDispatch, useSelector} from "react-redux"
-import {Box, Card, CardContent, Grid, IconButton, Stack, Typography} from "@mui/material"
+import {Box, Card, CardContent, Grid, IconButton, Stack, Typography, Checkbox} from "@mui/material"
 import customStyles from "./styles"
-import {DeleteOutline, EditOutlined} from "@mui/icons-material"
+import {EditOutlined, DeleteOutline} from "@mui/icons-material"
 import {formatDate} from "../common/DateTimeUtility"
 import EditTodoDialog from "./EditTodoDialog"
 
@@ -12,8 +12,11 @@ export const TaskList = () => {
     const todos = useSelector(state => state.tasks.tasks)
     const [selectedTodoId, setSelectedTodoId] = useState(null)
     const [isEditDialogOpen, setIsEditDialogOpen] = useState(false)
+
     const actions = (todo) =>
         (<Stack direction={"row"} marginLeft={"auto"}>
+            <Checkbox color={"primary"} onChange={() => dispatch(changeTodoStatus(todo.id, !todo.isCompleted))}
+                      checked={todo.isCompleted} />
             <IconButton component={"label"} onClick={() => handleEditTodo(todo)}>
                 <EditOutlined color={"primary"}/>
             </IconButton>

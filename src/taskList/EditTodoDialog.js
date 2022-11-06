@@ -31,7 +31,7 @@ const EditTodoDialog = ({isOpen, todoId, setIsOpen}) => {
     }
 
     useEffect(() => {
-        if(todo){
+        if (todo) {
             setTitle(todo.title)
             setDescription(todo.description)
             setOverdueDate(todo.overdueDate)
@@ -39,7 +39,7 @@ const EditTodoDialog = ({isOpen, todoId, setIsOpen}) => {
     }, [todo, todoId])
 
     const handleEdit = () => {
-        dispatch(editTodo({ id: todo.id, title, description, overdueDate}))
+        dispatch(editTodo({id: todo.id, title, description, overdueDate}))
         closeDialog()
     }
 
@@ -54,8 +54,8 @@ const EditTodoDialog = ({isOpen, todoId, setIsOpen}) => {
                                inputProps={{maxLength: 220}}/>
                 </Stack>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DateTimePicker label={"Overdue date"}  value={overdueDate} onChange={applyOverdueDate}
-                                    renderInput={(params) => <TextField {...params}/>} />
+                    <DateTimePicker label={"Overdue date"} value={overdueDate} onChange={applyOverdueDate}
+                                    renderInput={(params) => <TextField {...params}/>}/>
                 </LocalizationProvider>
             </Stack>
         </DialogContent>

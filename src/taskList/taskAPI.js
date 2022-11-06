@@ -32,3 +32,11 @@ export const editTodo = (todo) => {
         })
     }
 }
+
+export const changeTodoStatus = (todoId, status) => {
+    return (dispatch) => {
+        axios.patch(`http://localhost:3000/tasks/${todoId}`, { isCompleted: status}).then(() => {
+            dispatch(loadTasks())
+        })
+    }
+}
