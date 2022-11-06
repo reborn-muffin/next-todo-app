@@ -24,6 +24,10 @@ const styles = {
         overflow: "hidden",
         boxSizing: "border-box",
         height: "12em"
+    },
+    todoTitle: {
+        overflow: "hidden",
+        textOverflow: "ellipsis"
     }
 }
 

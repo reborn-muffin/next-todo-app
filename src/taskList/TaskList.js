@@ -36,8 +36,7 @@ export const TaskList = () => {
             <CardContent style={customStyles.cardContent}>
                 <Box style={customStyles.mainContent}>
                     <Stack direction={"row"} alignItems={"center"}>
-                        <Typography variant={"h6"} textOverflow={"ellipsis"}
-                                    overflow={"hidden"}>{task.title}</Typography>
+                        <Typography variant={"h6"} style={customStyles.todoTitle}>{task.title}</Typography>
                         {actions(task)}
                     </Stack>
                     <Typography variant={"body1"} style={customStyles.taskBody}>{task.description}</Typography>
