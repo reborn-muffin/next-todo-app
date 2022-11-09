@@ -1,6 +1,7 @@
 import {Box} from "@mui/material"
 import {Header} from "../header/Header"
 import {Sidebar} from "../sidebar/Sidebar"
+import AlertManager from "../common/alerts/AlertManager"
 
 export const Layout = ({children}) => {
     const drawerWidth = "15em"
@@ -12,5 +13,6 @@ export const Layout = ({children}) => {
         <div style={{ maxWidth: `calc(100% - ${drawerWidth})`, marginLeft: "auto", marginTop: headerHeight}}>
             {children}
         </div>
+        <AlertManager />
     </Box>
 }
