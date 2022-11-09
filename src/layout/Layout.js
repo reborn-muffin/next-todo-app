@@ -1,6 +1,6 @@
 import {Box} from "@mui/material"
-import {Header} from "./Header"
-import {SideBar} from "./SideBar"
+import {Header} from "../header/Header"
+import {Sidebar} from "../sidebar/Sidebar"
 
 export const Layout = ({children}) => {
     const drawerWidth = "15em"
@@ -8,7 +8,7 @@ export const Layout = ({children}) => {
 
     return <Box>
         <Header drawerWidth={drawerWidth} headerHeight={headerHeight}/>
-        <SideBar drawerWidth={drawerWidth}/>
+        <Sidebar drawerWidth={drawerWidth}/>
         <div style={{ maxWidth: `calc(100% - ${drawerWidth})`, marginLeft: "auto", marginTop: headerHeight}}>
             {children}
         </div>

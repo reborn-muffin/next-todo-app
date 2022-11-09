@@ -1,8 +1,8 @@
-import {useLayoutStyles} from "./layoutStyles"
+import {useHeaderStyles} from "./headerStyles"
 import {AppBar, Button, Toolbar, Typography} from "@mui/material"
 
 export const Header = ({headerHeight}) => {
-    const styles = useLayoutStyles()
+    const styles = useHeaderStyles()
     return <AppBar className={styles.header} sx={{ height: headerHeight}}>
         <Toolbar>
             <Typography variant={"h5"} sx={{flexGrow: 1}}>
