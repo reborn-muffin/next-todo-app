@@ -1,6 +1,6 @@
 import {Box} from "@mui/material"
-import {Header} from "../header/Header"
-import {Sidebar} from "../sidebar/Sidebar"
+import {Header} from "./header/Header"
+import {Sidebar} from "./sidebar/Sidebar"
 import AlertManager from "../common/alerts/AlertManager"
 
 export const Layout = ({children}) => {

@@ -1,5 +1,5 @@
 import {Button, Dialog, DialogActions, DialogContent, Stack, TextField} from "@mui/material"
-import customStyles from "../sidebar/styles"
+import customStyles from "../layout/sidebar/styles"
 import {DateTimePicker, LocalizationProvider} from "@mui/x-date-pickers"
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs"
 import {useDispatch, useSelector} from "react-redux"
