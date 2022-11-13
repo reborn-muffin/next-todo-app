@@ -8,8 +8,6 @@ import {
 
 const FilterMenu = () => {
     return <List>
-        <Toolbar/>
-        <Divider />
         <ListItem>
             <ListItemButton>
                 <ListItemIcon>
