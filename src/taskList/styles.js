@@ -1,4 +1,4 @@
-const styles = {
+const styles = (theme) => ({
     taskBody: {
         wordWrap: "break-word",
         hyphens: "auto",
@@ -7,10 +7,18 @@ const styles = {
     taskGrid: {
         width: "100%",
         maxWidth: "33%",
+        [theme.breakpoints.down("md")]: {
+            maxWidth: "100%",
+            paddingX: "0 !important"
+        }
     },
     rootGrid: {
         width: "80%",
-        margin: "5% auto",
+        marginTop: "5%",
+        [theme.breakpoints.down("md")]: {
+            width: "90%",
+            marginX: "auto"
+        }
     },
     cardContent: {
         boxSizing: "border-box",
@@ -31,7 +39,7 @@ const styles = {
     todoTitle: {
         overflow: "hidden",
         textOverflow: "ellipsis"
-    }
-}
+    },
+})
 
 export default styles

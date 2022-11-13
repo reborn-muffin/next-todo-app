@@ -2,16 +2,20 @@ import {useEffect, useState} from "react"
 import {deleteTodo, loadTasks, changeTodoStatus} from "./taskAPI"
 import {useDispatch, useSelector} from "react-redux"
 import {Box, Card, CardContent, Grid, IconButton, Stack, Typography, Checkbox} from "@mui/material"
-import customStyles from "./styles"
+import styles from "./styles"
 import {EditOutlined, DeleteOutline} from "@mui/icons-material"
 import {formatDate} from "../common/DateTimeUtility"
 import EditTodoDialog from "./EditTodoDialog"
+import {useTheme} from "@mui/styles"
 
 export const TaskList = () => {
     const dispatch = useDispatch()
     const todos = useSelector(state => state.tasks.tasks)
     const [selectedTodoId, setSelectedTodoId] = useState(null)
     const [isEditDialogOpen, setIsEditDialogOpen] = useState(false)
+
+    const theme = useTheme()
+    const customStyles = styles(theme)
 
     const actions = (todo) =>
         (<Stack direction={"row"} marginLeft={"auto"}>
@@ -34,7 +38,7 @@ export const TaskList = () => {
         dispatch(loadTasks())
     }, [])
 
-    const taskCard = (task) => (<Grid item flexGrow={1} style={customStyles.taskGrid}>
+    const taskCard = (task) => (<Grid item flexGrow={1} sx={customStyles.taskGrid}>
         <Card key={task.id} style={{height: 250}}>
             <CardContent style={customStyles.cardContent}>
                 <Box style={customStyles.mainContent}>
@@ -50,7 +54,7 @@ export const TaskList = () => {
         </Card>
     </Grid>)
 
-    return <Grid container spacing={5} style={customStyles.rootGrid}>
+    return <Grid container spacing={5} sx={customStyles.rootGrid}>
         {todos && todos.map(taskCard)}
         <EditTodoDialog isOpen={isEditDialogOpen} todoId={selectedTodoId} setIsOpen={setIsEditDialogOpen}/>
     </Grid>
