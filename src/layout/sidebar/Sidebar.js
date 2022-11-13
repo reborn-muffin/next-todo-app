@@ -24,7 +24,13 @@ export const Sidebar = ({drawerWidth}) => {
     const portalContainer = document.getElementById("mobile-menu-button")
     const menuButton = isDomReady ? createPortal(menuButtonElement, portalContainer) : []
 
-    return <ClickAwayListener onClickAway={() => setIsDrawerOpen(false)}>
+    const handleCloseMenu = (event) => {
+        if(event.type === "touchend"){
+            setIsDrawerOpen(false)
+        }
+    }
+
+    return <ClickAwayListener onClickAway={handleCloseMenu}>
         <Drawer variant={"persistent"} open={isDrawerOpen} anchor={"left"}
                 PaperProps={{sx: {width: drawerWidth, ...customStyles.drawerRoot}}}>
             {menuButton}
