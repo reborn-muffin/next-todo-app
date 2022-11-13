@@ -14,10 +14,10 @@ const styles = (theme) => ({
     },
     rootGrid: {
         width: "80%",
-        marginTop: "5%",
+        margin: "5% auto",
         [theme.breakpoints.down("md")]: {
             width: "90%",
-            marginX: "auto"
+            marginX: "auto 0"
         }
     },
     cardContent: {
