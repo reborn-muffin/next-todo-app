@@ -8,7 +8,7 @@ const AlertManager = () => {
     const alertItems = useSelector(state => state.alerts.items)
 
     const makeAlert = (item) => <AutoHideAlert handleClose={() => dispatch(removeAlert(item.id))}
-                                 message={item.message} severity={item.severity} time={item?.time}/>
+                                 message={item.message} severity={item.severity} time={item?.time} key={item.id}/>
 
     const alerts = alertItems?.map((item) => makeAlert(item), [])
 
