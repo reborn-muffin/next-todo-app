@@ -1,12 +1,16 @@
 import {useHeaderStyles} from "./headerStyles"
-import {AppBar, Button, Toolbar, Typography} from "@mui/material"
+import {AppBar, Box, Button, Toolbar, Typography} from "@mui/material"
+import {useTheme} from "@mui/styles"
 
 export const Header = ({headerHeight}) => {
-    const styles = useHeaderStyles()
-    return <AppBar className={styles.header} sx={{ height: headerHeight}}>
+    const theme = useTheme()
+    const styles = useHeaderStyles(theme)
+
+    return <AppBar sx={{ ...styles.header, height: headerHeight}}>
         <Toolbar>
+            <Box id={"mobile-menu-button"} sx={styles.mobileMenu}></Box>
             <Typography variant={"h5"} sx={{flexGrow: 1}}>
-                Todo App
+                {"Todo App"}
             </Typography>
             <Button variant={"outlined"} color={"inherit"}>Logout</Button>
         </Toolbar>
