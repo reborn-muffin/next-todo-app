@@ -38,8 +38,8 @@ export const TaskList = () => {
         dispatch(loadTasks())
     }, [])
 
-    const taskCard = (task) => (<Grid item flexGrow={1} sx={customStyles.taskGrid}>
-        <Card key={task.id} style={{height: 250}}>
+    const taskCard = (task) => (<Grid item flexGrow={1} sx={customStyles.taskGrid} key={task.id}>
+        <Card style={{height: 250}}>
             <CardContent style={customStyles.cardContent}>
                 <Box style={customStyles.mainContent}>
                     <Stack direction={"row"} alignItems={"center"}>
