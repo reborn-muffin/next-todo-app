@@ -33,10 +33,12 @@ export const Sidebar = ({drawerWidth}) => {
     return <ClickAwayListener onClickAway={handleCloseMenu}>
         <Drawer variant={"persistent"} open={isDrawerOpen} anchor={"left"}
                 PaperProps={{sx: {width: drawerWidth, ...customStyles.drawerRoot}}}>
-            {menuButton}
-            <FilterMenu/>
-            <Divider/>
-            <ControlMenu/>
+            <>
+                {menuButton}
+                <FilterMenu/>
+                <Divider/>
+                <ControlMenu/>
+            </>
         </Drawer>
     </ClickAwayListener>
 }
