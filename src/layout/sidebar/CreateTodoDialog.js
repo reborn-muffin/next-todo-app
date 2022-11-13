@@ -50,7 +50,7 @@ const CreateTodoDialog = ({isOpen, handleClose}) => {
             <Stack spacing={3} style={customStyles.createDialog}>
                 <Stack spacing={2}>
                     <TextField autoFocus id={"title"} label={"title"} value={title} inputProps={{maxLength: 30}}
-                               onChange={(event) => setTitle(event.target.value)}/>
+                               onChange={(event) => setTitle(event.target.value)} style={{marginTop: "5%"}}/>
                     <TextField id={"description"} label={"description"} value={description} multiline maxRows={5}
                                minRows={5} onChange={(event) => setDescription(event.target.value)}
                                inputProps={{maxLength: 220}}/>
