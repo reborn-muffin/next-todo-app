@@ -1,4 +1,4 @@
-import {Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar} from "@mui/material"
+import {List, ListItem, ListItemButton, ListItemIcon, ListItemText} from "@mui/material"
 import {
     AssignmentLateOutlined,
     CalendarMonthOutlined,
