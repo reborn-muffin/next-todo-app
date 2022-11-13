@@ -38,7 +38,8 @@ const styles = (theme) => ({
     },
     todoTitle: {
         overflow: "hidden",
-        textOverflow: "ellipsis"
+        textOverflow: "ellipsis",
+        whiteSpace: "nowrap"
     },
 })
 
