@@ -7,8 +7,8 @@ const alertSlice = createSlice({
     },
     reducers: {
         generateAlert: (state, action) => {
-            const id = state.items.length + 1
-            state.items.push({ id, ...action.payload})
+            const id = Date.now()
+            state.items.push({ id: id, ...action.payload})
         },
         removeAlert: (state, action) => {
             state.items = state.items.filter(alerts => alerts.id !== action.payload)
