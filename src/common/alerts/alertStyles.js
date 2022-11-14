@@ -1,4 +1,4 @@
-const alertStyles = {
+const alertStyles = (theme) => ({
     alertRoot: {
         width: "60%",
         position: "fixed",
@@ -8,10 +8,13 @@ const alertStyles = {
         transform: "translate(-50%, -50%)",
         display: "flex",
         flexDirection: "column",
+        [theme.breakpoints.down("md")]: {
+            width: "90%"
+        }
     },
     alert: {
-        marginTop: "0.5em"
+        marginTop: "1em"
     }
-}
+})
 
 export default alertStyles
