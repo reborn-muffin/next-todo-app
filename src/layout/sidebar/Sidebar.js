@@ -7,9 +7,9 @@ import {MenuOutlined} from "@mui/icons-material"
 import {useEffect, useState} from "react"
 import {createPortal} from "react-dom"
 
-export const Sidebar = ({drawerWidth}) => {
+export const Sidebar = ({drawerWidth, headerHeight}) => {
     const theme = useTheme()
-    const customStyles = styles(theme)
+    const customStyles = styles(theme, drawerWidth, headerHeight)
 
     const [isDrawerOpen, setIsDrawerOpen] = useState(true)
     const [isDomReady, setIsDomReady] = useState(false)
@@ -32,7 +32,7 @@ export const Sidebar = ({drawerWidth}) => {
 
     return <ClickAwayListener onClickAway={handleCloseMenu}>
         <Drawer variant={"persistent"} open={isDrawerOpen} anchor={"left"}
-                PaperProps={{sx: {width: drawerWidth, ...customStyles.drawerRoot}}}>
+                PaperProps={{sx: customStyles.drawerRoot}}>
             <>
                 {menuButton}
                 <FilterMenu/>

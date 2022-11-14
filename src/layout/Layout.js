@@ -14,7 +14,7 @@ export const Layout = ({children}) => {
 
     return <Box>
         <Header drawerWidth={drawerWidth} headerHeight={headerHeight}/>
-        <Sidebar drawerWidth={drawerWidth}/>
+        <Sidebar drawerWidth={drawerWidth} headerHeight={headerHeight}/>
         <Box sx={layoutStyles.children}>
             {children}
         </Box>
