@@ -1,13 +1,17 @@
-import {Button, Dialog, DialogActions, DialogContent, Stack, TextField} from "@mui/material"
-import customStyles from "../sidebar/styles"
+import {Button, Dialog, DialogActions, DialogContent, DialogTitle, Stack, TextField} from "@mui/material"
+import useStyles from "./styles"
 import {DateTimePicker, LocalizationProvider} from "@mui/x-date-pickers"
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs"
 import {useDispatch, useSelector} from "react-redux"
 import {useEffect, useState} from "react"
 import {editTodo} from "./taskAPI"
+import {useTheme} from "@mui/styles"
 
 const EditTodoDialog = ({isOpen, todoId, setIsOpen}) => {
     const dispatch = useDispatch()
+
+    const theme = useTheme()
+    const customStyles = useStyles(theme)
 
     const todo = useSelector(state => state.tasks.tasks?.find(item => item.id === todoId))
     const [title, setTitle] = useState("")
@@ -43,9 +47,10 @@ const EditTodoDialog = ({isOpen, todoId, setIsOpen}) => {
         closeDialog()
     }
 
-    return <Dialog open={isOpen}>
+    return <Dialog open={isOpen} maxWidth={"sm"} PaperProps={{sx: customStyles.editDialogRoot}}>
+        <DialogTitle>{"Edit todo"}</DialogTitle>
         <DialogContent id={"create-task-dialog-content"}>
-            <Stack spacing={3} style={customStyles.createDialog}>
+            <Stack spacing={3} sx={customStyles.dialogContent}>
                 <Stack spacing={2}>
                     <TextField autoFocus id={"title"} label={"title"} value={title} inputProps={{maxLength: 30}}
                                onChange={(event) => setTitle(event.target.value)}/>
