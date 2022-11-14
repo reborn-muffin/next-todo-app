@@ -12,10 +12,13 @@ import {useState} from "react"
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs"
 import {createTodo} from "../../taskList/taskAPI"
 import {useDispatch} from "react-redux"
-import customStyles from "./styles"
+import useStyles from "./styles"
+import {useTheme} from "@mui/styles"
 
 const CreateTodoDialog = ({isOpen, handleClose}) => {
     const dispatch = useDispatch()
+    const theme = useTheme()
+    const customStyles = useStyles(theme)
 
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
@@ -42,15 +45,15 @@ const CreateTodoDialog = ({isOpen, handleClose}) => {
         setOverdueDate(formattedDate)
     }
 
-    return <Dialog open={isOpen} onClose={closeDialog} maxWidth={"sm"}>
+    return <Dialog open={isOpen} onClose={closeDialog} maxWidth={"sm"} PaperProps={{sx: customStyles.createDialogRoot}}>
         <DialogTitle id={"create-task-dialog-title"}>
             {"Create task"}
         </DialogTitle>
         <DialogContent id={"create-task-dialog-content"}>
-            <Stack spacing={3} style={customStyles.createDialog}>
+            <Stack spacing={3} sx={customStyles.createDialog}>
                 <Stack spacing={2}>
                     <TextField autoFocus id={"title"} label={"title"} value={title} inputProps={{maxLength: 30}}
-                               onChange={(event) => setTitle(event.target.value)} style={{marginTop: "5%"}}/>
+                               onChange={(event) => setTitle(event.target.value)}/>
                     <TextField id={"description"} label={"description"} value={description} multiline maxRows={5}
                                minRows={5} onChange={(event) => setDescription(event.target.value)}
                                inputProps={{maxLength: 220}}/>

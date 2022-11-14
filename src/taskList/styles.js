@@ -41,6 +41,20 @@ const styles = (theme) => ({
         textOverflow: "ellipsis",
         whiteSpace: "nowrap"
     },
+    editDialogRoot: {
+        [theme.breakpoints.down("md")]: {
+            width: "90%",
+            margin: 0
+        }
+    },
+    dialogContent: {
+        marginTop: "1em",
+        width: "30em",
+        [theme.breakpoints.down("md")]: {
+            width: "100%",
+            margin: "1em 0 0 0",
+        }
+    }
 })
 
 export default styles
