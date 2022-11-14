@@ -1,4 +1,4 @@
-const styles = (theme) => ({
+const styles = (theme, drawerWidth, headerHeight) => ({
     createDialog: {
         marginTop: "1em",
         width: "30em",
@@ -8,6 +8,8 @@ const styles = (theme) => ({
         }
     },
     drawerRoot: {
+        width: drawerWidth,
+        marginTop: headerHeight,
         [theme.breakpoints.down("md")]: {
             zIndex: theme.zIndex.drawer + 1
         }
