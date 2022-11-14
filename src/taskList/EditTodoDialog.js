@@ -43,7 +43,8 @@ const EditTodoDialog = ({isOpen, todoId, setIsOpen}) => {
         closeDialog()
     }
 
-    return <Dialog open={isOpen}>
+    return <Dialog open={isOpen} maxWidth={"sm"} PaperProps={{sx: customStyles.editDialogRoot}}>
+        <DialogTitle>{"Edit todo"}</DialogTitle>
         <DialogContent id={"create-task-dialog-content"}>
             <Stack spacing={3} style={customStyles.createDialog}>
                 <Stack spacing={2}>
