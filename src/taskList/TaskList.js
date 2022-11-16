@@ -36,7 +36,7 @@ export const TaskList = () => {
 
     useEffect(() => {
         dispatch(loadTasks())
-    }, [])
+    }, [dispatch])
 
     const taskCard = (task) => (<Grid item flexGrow={1} sx={customStyles.taskGrid} key={task.id}>
         <Card style={{height: 250}}>
