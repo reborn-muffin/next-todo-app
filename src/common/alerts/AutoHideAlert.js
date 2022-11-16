@@ -13,7 +13,7 @@ const AutoHideAlert = ({time, handleClose, severity, id, message}) => {
         setTimeout(() => {
             handleClose(id)
         }, timeout)
-    }, [])
+    }, [handleClose, id, timeout])
 
     return <Alert severity={severity} key={id} style={customStyles.alert}>
         <Typography variant={"body1"}>{message}</Typography>
